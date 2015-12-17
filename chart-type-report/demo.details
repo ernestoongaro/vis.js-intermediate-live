@@ -2,3 +2,4 @@
  name: "006. Changing Chart Type"
  docs: "http://community.jaspersoft.com/documentation/tibco-jasperreports-server-visualizejs-guide/v610/api-usage-interactive-reports#Changing_the_Chart_Type"
  description: "Change chart type from outside the UI"
+ wrap: l

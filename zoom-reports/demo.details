@@ -2,3 +2,4 @@
  name: "005. Zooming Reports"
  docs: "http://not.documented.in.61"
  description: "Resize a standard report by zooming it"
+ wrap: l
