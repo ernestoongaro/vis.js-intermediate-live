@@ -8,8 +8,15 @@ visualize({
     var report = v.report({
         resource: "/public/Samples/Reports/States",
         error: handleError,
-        container: "#container"
+        container: "#container",
+        success: printComponentsNames,
     });
+    
+    function printComponentsNames(data){
+      report.data().components.forEach(function(c){
+      console.log("Component Name: " + c.name, "Component Lable: "+ c.label);
+      });
+      }
 
     //show error
     function handleError(err) {
@@ -17,12 +24,14 @@ visualize({
     };
 
 
-    var component = data.components.filter(function (c) {
+    var component = report.data().components.filter(function (c) {
         return c.name === chartName;
     });
 
-    window.barChart = function barChart() {
-        report.updateComponent("salesChart", {
+		    
+    $( "#barChart" ).click(function() {
+    	
+  		report.updateComponent("salesChart", {
             chartType: "Bar"
         })
             .done(function () {
@@ -31,10 +40,10 @@ visualize({
             .fail(function (err) {
             alert(err.message);
         });
-    }
-
-    window.pieChart = function pieChart() {
-        report.updateComponent("salesChart", {
+		});
+    
+    $( "#pieChart" ).click(function() {
+  		report.updateComponent("salesChart", {
             chartType: "Pie"
         })
             .done(function () {
@@ -43,7 +52,8 @@ visualize({
             .fail(function (err) {
             alert(err.message);
         });
-    }
-    console.log(report.data().components);
+		});
+   
+    //console.log(report.data().components);
 
 });
