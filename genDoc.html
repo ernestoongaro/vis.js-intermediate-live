@@ -16,7 +16,7 @@
 <script>
 
 var githubUsername = 'ernestoongaro';
-var githubReponame = 'vis.js-vis.js-intermediate-6.1';
+var githubReponame = 'vis.js-intermediate-live';
 var gitBranch = 'master';
 
 $(document).ready(function () {
@@ -53,17 +53,17 @@ $(document).ready(function () {
       }
       $('#examples').DataTable( {
           data: tableData,
-          ordering: false,
-          "order": [[ 0, 'asc' ]],
+          ordering: true,
+          orderFixed: [[ 0, 'asc' ]],
           searching: false,
           paging: false,
           info: false,
-          "autoWidth": false,
+          autoWidth: false,
           columns: [
-            { title: "Name"},
-            { title: "Description"},
-            { title: "Open in JS Fiddle"}, //why isn't width working???
-            { title: "Link to Doc"}
+            { title: "Name", "width": "20%"},
+            { title: "Description","width": "50%"},
+            { title: "Open in JS Fiddle","width": "15%"}, 
+            { title: "Link to Doc","width": "15%"}
           ]
       });
       
